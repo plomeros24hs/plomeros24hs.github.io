@@ -1,0 +1,389 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    color: #333; /* Color base para texto */
+}
+
+h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+h1 { font-size: 3.5em; }
+h2 { font-size: 2.7em; }
+h3 { font-size: 2em; }
+p { font-size: 1.25em; }
+ul { list-style: none; }
+li { font-size: 1.25em; }
+
+button {
+    font-size: 1.25em;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    color: white;
+    background-color: blueviolet;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: rgb(101, 33, 165);
+    transform: scale(1.05); /* Efecto sutil al pasar el cursor */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: blueviolet;
+}
+
+/* Estilos comunes para el botón */
+a.button-style {
+    font-size: 1.25em;
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    color: white;
+    background-color: blueviolet;
+    text-decoration: none; /* Quitar el subrayado del enlace */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 150px;
+}
+
+a.button-style:hover {
+    background-color: rgb(101, 33, 165);
+    transform: scale(1.05);
+}
+
+a.button-style:active {
+    transform: scale(1.02);
+    background-color: rgb(101, 33, 165); /* Mismo color al hacer clic */
+}
+
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 15px;
+}
+
+.color-acento {
+    color: blueviolet;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10; /* Asegura que el header siempre esté visible */
+    background-color: rgb(245, 245, 245);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para resaltar */
+}
+
+header .logo {
+    margin: 0;
+    padding: 25px 30px;
+    font-weight: bold;
+    color: blueviolet;
+    font-size: 1.6em;
+}
+
+header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header nav {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 25px;
+}
+
+header a {
+    padding: 5px 12px;
+    font-weight: bold;
+    color: black;
+}
+
+header a:hover {
+    color: blueviolet;
+}
+
+#hero {
+    margin-top: 80px; /* Altura del header, para evitar que el contenido del hero quede tapado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 90vh;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+    ), url("media/hero.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+    background-position: center center; /* Asegura que la imagen esté centrada */
+    background-attachment: fixed; /* Fija la imagen al fondo para un efecto parallax */
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    #hero {
+        background-attachment: scroll; /* Desactiva el efecto parallax en pantallas pequeñas */
+    }
+
+    #hero h1 {
+        font-size: 2.5em; /* Reduce el tamaño del texto para pantallas pequeñas */
+    }
+
+    #hero button {
+        font-size: 1.5em; /* Ajusta el tamaño del botón */
+        padding: 12px 24px; /* Ajusta el tamaño del botón en pantallas pequeñas */
+    }
+}
+
+/* Media Query para pantallas muy grandes */
+@media (min-width: 1200px) {
+    #hero {
+        height: 100vh; /* Aumenta la altura para pantallas muy grandes */
+    }
+
+    #hero h1 {
+        font-size: 5em; /* Aumenta el tamaño del texto en pantallas grandes */
+    }
+
+    #hero button {
+        font-size: 2em; /* Aumenta el tamaño del botón en pantallas grandes */
+        padding: 15px 40px;
+    }
+}
+
+
+#hero h1 {
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+#hero button {
+    font-size: 1.75em;
+}
+
+#somos-proya .container {
+    text-align: center;
+    padding: 200px 12px;
+}
+
+#nuestros-programas {
+    background-color: rgb(30, 30, 30);
+    color: white;
+    text-align: center;
+    padding-top: 150px; /* Espacio suficiente para que no se superponga */
+}
+
+#nuestros-programas .container {
+    padding: 150px 12px;
+}
+
+#nuestros-programas h2 {
+    margin-top: 0;
+    font-size: 3.2em;
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Comienza 20px por debajo */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Llega a su posición original */
+    }
+}
+
+.carta {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    margin: 30px;
+    padding: 50px;
+    color: white;
+    background-position: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.carta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Fondo oscuro translúcido detrás del texto */
+.carta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro translúcido */
+    z-index: 1; /* Debajo del texto */
+}
+
+/* Contenido de la carta (texto y botones) */
+.carta h3, .carta p, .carta button {
+    animation: floatUp 1s ease-out forwards; /* La animación dura 1 segundo */
+    opacity: 0; /* Inicialmente invisibles */
+    transform: translateY(20px); /* Inicialmente un poco más abajo */
+    animation-delay: 0.5s; /* Demora de medio segundo para un efecto más gradual */
+}
+.carta h3, .carta p, .carta button {
+    position: relative; /* Para estar por encima del pseudo-elemento */
+    z-index: 2; /* Por encima del fondo translúcido */
+    color: white; /* Asegura que el texto sea blanco */
+}
+
+/* Especificar las imágenes de fondo */
+.carta:first-child { background-image: url("media/caño_de_agua.jpg"); }
+.carta:nth-child(2) { background-image: url("media/desague.jpg"); }
+.carta:nth-child(3) { background-image: url("media/griferia.jpg"); }
+.carta:nth-child(4) { background-image: url("media/sanitario.jpg"); }
+
+
+#caracteristicas {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
+    padding: 80px 20px;
+    color: #fff;
+}
+
+#caracteristicas .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+#caracteristicas h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+#caracteristicas li {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.8s ease;
+    list-style-type: none;
+}
+
+#caracteristicas li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+    background-size: 400% 400%;
+    animation: rainbow 10s ease infinite;
+}
+
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+#caracteristicas li i {
+    font-size: 3em;
+    margin-bottom: 15px;
+    color: blueviolet;
+}
+
+#caracteristicas li h3 {
+    font-size: 1.75em;
+    margin-bottom: 10px;
+}
+
+#caracteristicas li p {
+    font-size: 1.25em;
+}
+
+
+#final {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(30, 30, 30);
+    color: white;
+    height: 80vh;
+}
+
+#final h2 {
+    font-size: 9vw;
+}
+
+.mapa{
+    background-image: url(media/mapa.jpg);
+    background-repeat: no-repeat;
+}
+
+footer {
+    background-color: rgb(230, 230, 230);
+}
+
+footer p {
+    margin: 0;
+    padding: 12px;
+    color: rgb(100, 100, 100);
+}
+
+footer .container {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* Media queries para dispositivos más grandes */
+@media (min-width: 850px) {
+    header {
+        position: fixed;
+        width: 100%;
+    }
+
+    header .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header nav {
+        flex-direction: row;
+        padding-bottom: 0;
+    }
+
+    #hero h1 {
+        font-size: 5em;
+    }
+
+    #nuestros-programas h2 {
+        font-size: 4em;
+    }
+}
